@@ -6,6 +6,7 @@ import * as SplashScreen from 'expo-splash-screen';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import 'react-native-reanimated';
+import '../firebaseConfig';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
