@@ -7,9 +7,7 @@ import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import 'react-native-reanimated';
 import '../firebaseConfig';
-
-import Header from '@/components/Header';
-import Footer from '@/components/Footer';
+import '../i18n';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
@@ -39,7 +37,6 @@ function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <View style={[fullAllScreen.appContainer]}>
         <View style={[fullAllScreen.fullFlex, { marginTop: insets.top, marginBottom: insets.bottom }]}>
-          <Header />
           <View style={fullAllScreen.fullFlex}>
             <Stack initialRouteName={Routes.Root.index}>
               <Stack.Screen name={Routes.Root.index} options={GeneralScreenOptions} />
@@ -48,7 +45,6 @@ function RootLayout() {
               <Stack.Screen name={Routes.Root.notFound} options={GeneralScreenOptions} />
             </Stack>
           </View>
-          <Footer />
         </View>
       </View>
     </ThemeProvider>

@@ -1,5 +1,9 @@
+import fbAuth from '@/firebase/fbAuth';
+
 const useLoginScreenService = () => {
-  const loginWithGoogle = () => {};
+  const loginWithGoogle = async () => {
+    await fbAuth.loginWithGoogle()
+  };
 
   return { loginWithGoogle };
 };

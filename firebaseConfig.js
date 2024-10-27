@@ -1,12 +1,6 @@
 import { initializeApp } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
-import { GoogleAuthProvider } from '@firebase/auth';
-
-// Optionally import the services that you want to use
-// import {...} from "firebase/database";
-// import {...} from "firebase/firestore";
-// import {...} from "firebase/functions";
-// import {...} from "firebase/storage";
+import { initializeAuth, GoogleAuthProvider, getReactNativePersistence } from 'firebase/auth';
+import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -21,7 +15,9 @@ const firebaseConfig = {
 };
 
 export const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+export const auth = initializeAuth(app, {
+  persistence: getReactNativePersistence(ReactNativeAsyncStorage),
+});
 
 export const googleProvider = new GoogleAuthProvider();
 // googleProvider.addScope('https://www.googleapis.com/auth/contacts.readonly');

@@ -23,6 +23,10 @@ export const Colors = {
         button: '#0a7ea4',
         textButton: '#ffffff',
       },
+      login: {
+        button: '#333333',
+        textButton: '#ffffff',
+      },
     },
   },
   dark: {
@@ -38,6 +42,10 @@ export const Colors = {
     buttons: {
       primary: {
         button: '#0a7ea4',
+        textButton: '#ffffff',
+      },
+      login: {
+        button: '#333333',
         textButton: '#ffffff',
       },
     },

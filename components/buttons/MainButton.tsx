@@ -1,17 +1,46 @@
 import React from 'react';
-import { StyleSheet, Text, Pressable, type PressableProps } from 'react-native';
+import { StyleSheet, Pressable, type PressableProps, View } from 'react-native';
+import TextApp from '@/components/texts/TextApp';
+
 import { useThemeColor } from '@/hooks/useThemeColor';
+
+import { withSizes } from '@/styles/Sizes';
 
 interface MainButtonProps extends PressableProps {
   text: string;
   onPress: () => void;
+  leftIcon?: React.ReactNode;
+  style?: any;
 }
 
-const MainButton = ({ text, onPress }: MainButtonProps) => {
+const MainButton = ({ text, onPress, leftIcon, style = {} }: MainButtonProps) => {
   const buttonColor = useThemeColor({}, 'buttons');
+
+  const renderContent = () => {
+    if (leftIcon) {
+      return (
+        <View style={styles.leftIconContainer}>
+          {leftIcon}
+          <TextApp
+            style={[styles.text, { color: buttonColor.primary.textButton, marginLeft: withSizes['10'] }]}
+            text={text}
+          />
+        </View>
+      );
+    }
+
+    return <TextApp style={[styles.text, { color: buttonColor.primary.textButton }]} text={text} />;
+  };
+
   return (
-    <Pressable onPress={onPress} style={[styles.button, { backgroundColor: buttonColor.primary.button }]}>
-      <Text style={[styles.text, { color: buttonColor.primary.textButton }]}>{text}</Text>
+    <Pressable
+      onPress={onPress}
+      style={(state) => [
+        styles.button,
+        { backgroundColor: buttonColor.primary.button, opacity: state.pressed ? 0.6 : 1 },
+        style,
+      ]}>
+      {renderContent()}
     </Pressable>
   );
 };
@@ -23,6 +52,14 @@ const styles = StyleSheet.create({
   },
   text: {
     textAlign: 'center',
+    fontWeight: 'bold',
+    fontFamily: 'System',
+  },
+  leftIconContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 5,
   },
 });
 

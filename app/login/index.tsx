@@ -5,7 +5,7 @@ import LoginScreenService from '@/app/login/LoginScreenService';
 const LoginScreenController = () => {
   const { loginWithGoogle } = LoginScreenService.useLoginScreenService();
 
-  return <LoginScreen />;
+  return <LoginScreen loginWithGoogle={loginWithGoogle} />;
 };
 
 export default LoginScreenController;

@@ -12,7 +12,8 @@ const scaleHeight = (size: any) => (screenHeight / 812) * size; // 812 es la alt
 const scaleFont = (size: any) => size * PixelRatio.getFontScale();
 
 const withSizes = {
-  100: width,
+  full: width,
+  100: scaleWidth(100),
   90: scaleWidth(90),
   30: scaleWidth(30),
   20: scaleWidth(20),
@@ -26,17 +27,25 @@ const withSizes = {
 };
 
 const heightSizes = {
-  100: height,
+  full: height,
+  170: scaleHeight(170),
+  130: scaleHeight(130),
+  100: scaleHeight(100),
   90: scaleHeight(90),
+  80: scaleHeight(80),
+  70: scaleHeight(70),
+  50: scaleHeight(50),
   40: scaleHeight(40),
   35: scaleHeight(35),
   30: scaleHeight(30),
+  25: scaleHeight(25),
   20: scaleHeight(20),
   18: scaleHeight(18),
   10: scaleHeight(10),
 };
 
 const fonts = {
+  20: scaleFont(20),
   16: scaleFont(16),
   12: scaleFont(12),
 };
