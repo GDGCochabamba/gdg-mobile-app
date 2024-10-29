@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c777c8be-64a8-417b-8400-74ffbaf18a79" name="develop changes" comment="update projectId and owner">
-      <change afterPath="$PROJECT_DIR$/GoogleService-Info.plist" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/google-services.json" afterDir="false" />
+    <list default="true" id="c777c8be-64a8-417b-8400-74ffbaf18a79" name="develop changes" comment="add google-sign with prebuild">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
@@ -14,7 +12,10 @@
     </list>
     <list id="52524795-8971-43d3-ba00-a135f90ea53e" name="Keys" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GoogleService-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/GoogleService-Info.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/app.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/firebaseConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/firebaseConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/google-services.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,12 +39,20 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/.idea/workspace.xml">
       <ranges>
-        <range start1="7" end1="9" start2="7" end2="9" changelist="c777c8be-64a8-417b-8400-74ffbaf18a79" />
-        <range start1="10" end1="12" start2="10" end2="13" changelist="c777c8be-64a8-417b-8400-74ffbaf18a79" />
-        <range start1="14" end1="15" start2="15" end2="17" changelist="c777c8be-64a8-417b-8400-74ffbaf18a79" />
-        <range start1="34" end1="34" start2="36" end2="48" changelist="c777c8be-64a8-417b-8400-74ffbaf18a79" />
-        <range start1="61" end1="61" start2="75" end2="76" changelist="52524795-8971-43d3-ba00-a135f90ea53e" />
-        <range start1="140" end1="141" start2="155" end2="157" changelist="52524795-8971-43d3-ba00-a135f90ea53e" />
+        <range start1="6" end1="9" start2="6" end2="11" changelist="c777c8be-64a8-417b-8400-74ffbaf18a79" />
+        <range start1="10" end1="10" start2="12" end2="13" changelist="52524795-8971-43d3-ba00-a135f90ea53e" />
+        <range start1="11" end1="16" start2="14" end2="14" changelist="52524795-8971-43d3-ba00-a135f90ea53e" />
+        <range start1="17" end1="17" start2="15" end2="16" changelist="52524795-8971-43d3-ba00-a135f90ea53e" />
+        <range start1="36" end1="48" start2="35" end2="35" changelist="52524795-8971-43d3-ba00-a135f90ea53e" />
+        <range start1="75" end1="75" start2="62" end2="63" changelist="52524795-8971-43d3-ba00-a135f90ea53e" />
+        <range start1="134" end1="135" start2="122" end2="131" changelist="52524795-8971-43d3-ba00-a135f90ea53e" />
+        <range start1="154" end1="155" start2="150" end2="153" changelist="52524795-8971-43d3-ba00-a135f90ea53e" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/app.json">
+      <ranges>
+        <range start1="38" end1="39" start2="38" end2="39" changelist="52524795-8971-43d3-ba00-a135f90ea53e" />
+        <range start1="40" end1="40" start2="40" end2="50" changelist="c777c8be-64a8-417b-8400-74ffbaf18a79" />
       </ranges>
     </file>
   </component>

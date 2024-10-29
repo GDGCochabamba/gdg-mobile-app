@@ -38,6 +38,16 @@
         {
           "iosUrlScheme": "com.googleusercontent.apps._some_id_here_"
         }
+      ],
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "useFrameworks": "static"
+          }
+        }
       ]
     ],
     "experiments": {
