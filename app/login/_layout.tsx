@@ -2,8 +2,6 @@ import React from 'react';
 import { Navigator } from 'expo-router';
 import Slot = Navigator.Slot;
 
-const LoginScreenLayout = () => {
+export default function LoginScreenLayout() {
   return <Slot />;
-};
-
-export default LoginScreenLayout;
+}

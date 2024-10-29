@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function SingUpScreen() {
+export default function HomeScreenRoot() {
   return (
     <View>
-      <Text>SingUpScreen</Text>
+      <Text>HomeScreenRoot</Text>
     </View>
   );
 }

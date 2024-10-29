@@ -1,10 +1,10 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default function SingUpScreen() {
+export default function EventsScreen() {
   return (
     <View>
-      <Text>SingUpScreen</Text>
+      <Text>EventsScreen</Text>
     </View>
   );
-}
+};

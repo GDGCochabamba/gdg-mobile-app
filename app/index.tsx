@@ -6,7 +6,7 @@ import useAppNavigation from '@/hooks/useAppNavigation';
 
 import { Routes } from '@/constants/Routes';
 
-const MainApp = () => {
+export default function MainApp() {
   const { replaceTo } = useAppNavigation();
 
   const verifyNavigation = () => {
@@ -20,6 +20,4 @@ const MainApp = () => {
       <Text>MainApp</Text>
     </View>
   );
-};
-
-export default MainApp;
+}

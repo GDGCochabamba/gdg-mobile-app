@@ -3,8 +3,9 @@ export const Routes = {
     index: 'index',
     login: 'login',
     signup: 'signup',
+    home: 'home',
     notFound: '+not-found',
-    tabs: '(tabs)',
+    topTabs: '(top-tabs)',
   },
   NotFound: '*',
 };

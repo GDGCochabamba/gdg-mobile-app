@@ -16,7 +16,7 @@ import { fullAllScreen } from '@/styles/containerStyles';
 
 SplashScreen.preventAutoHideAsync().then();
 
-function RootLayout() {
+export default function RootLayout() {
   const insets = useSafeAreaInsets();
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
@@ -43,6 +43,8 @@ function RootLayout() {
               <Stack.Screen name={Routes.Root.login} options={GeneralScreenOptions} />
               <Stack.Screen name={Routes.Root.signup} options={GeneralScreenOptions} />
               <Stack.Screen name={Routes.Root.notFound} options={GeneralScreenOptions} />
+              <Stack.Screen name={Routes.Root.home} options={GeneralScreenOptions} />
+              <Stack.Screen name={Routes.Root.topTabs} options={GeneralScreenOptions} />
             </Stack>
           </View>
         </View>
@@ -50,5 +52,3 @@ function RootLayout() {
     </ThemeProvider>
   );
 }
-
-export default RootLayout;

@@ -17,7 +17,7 @@ interface Props {
   loginWithGoogle: () => void;
 }
 
-const LoginScreen = ({ loginWithGoogle }: Props) => {
+export default function LoginScreen({ loginWithGoogle }: Props) {
   const buttonColor = useThemeColor({}, 'buttons');
 
   const renderGDGIcon = () => {
@@ -60,7 +60,7 @@ const LoginScreen = ({ loginWithGoogle }: Props) => {
       {renderGDGLogo()}
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -98,5 +98,3 @@ const styles = StyleSheet.create({
     bottom: heightSizes['10'],
   },
 });
-
-export default LoginScreen;
