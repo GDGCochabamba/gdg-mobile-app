@@ -12,6 +12,12 @@ web-build/
 .idea
 .yarn/*
 
+# android folder contains generated code
+android/
+
+# ios folder contains generated code
+ios/
+
 # macOS
 .DS_Store
 
