@@ -1,8 +1,6 @@
-import { initializeApp } from 'firebase/app';
-import { initializeAuth, GoogleAuthProvider, getReactNativePersistence } from 'firebase/auth';
-import ReactNativeAsyncStorage from '@react-native-async-storage/async-storage';
+import firebase from '@react-native-firebase/app';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
-// Initialize Firebase
 const firebaseConfig = {
   apiKey: 'api-key',
   authDomain: 'project-id.firebaseapp.com',
@@ -14,10 +12,8 @@ const firebaseConfig = {
   measurementId: 'G-measurement-id',
 };
 
-export const app = initializeApp(firebaseConfig);
-export const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(ReactNativeAsyncStorage),
-});
+export const app = firebase.initializeApp(firebaseConfig);
 
-export const googleProvider = new GoogleAuthProvider();
-// googleProvider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+GoogleSignin.configure({
+  webClientId: 'webClientId',
+});

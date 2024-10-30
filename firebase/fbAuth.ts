@@ -1,26 +1,23 @@
-import { GoogleAuthProvider } from 'firebase/auth';
-import { auth, googleProvider } from '@/firebaseConfig';
-import { signInWithPopup } from '@firebase/auth/internal';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import auth from '@react-native-firebase/auth';
 
 export const loginWithGoogle = async () => {
-  try {
-    const result = await signInWithPopup(auth, googleProvider);
-    console.log('result', result);
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential?.accessToken;
-    console.log('token', token);
+  await GoogleSignin.hasPlayServices({ showPlayServicesUpdateDialog: true });
+  const signInResult: any = await GoogleSignin.signIn();
 
-    const user = result.user;
-    console.log('user', user);
-  } catch (e: any) {
-    console.log('error', e);
-    console.log('error message', e.message);
-    const errorCode = e.code;
-    const errorMessage = e.message;
+  let idToken = signInResult?.data?.idToken;
 
-    const email = e.customData.email;
-    const credential = GoogleAuthProvider.credentialFromError(e);
+  if (!idToken) {
+    idToken = signInResult.idToken;
   }
+
+  if (!idToken) {
+    throw new Error('idToken is missing');
+  }
+
+  const googleCredentials = auth.GoogleAuthProvider.credential(idToken);
+  console.log('googleCredentials', googleCredentials);
+  return auth().signInWithCredential(googleCredentials);
 };
 
 const fbAuth = {
