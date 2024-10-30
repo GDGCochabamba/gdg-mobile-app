@@ -12,7 +12,11 @@ const firebaseConfig = {
   measurementId: 'G-measurement-id',
 };
 
-export const app = firebase.initializeApp(firebaseConfig);
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig).then();
+} else {
+  firebase.app();
+}
 
 GoogleSignin.configure({
   webClientId: 'webClientId',

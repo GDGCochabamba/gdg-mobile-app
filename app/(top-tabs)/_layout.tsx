@@ -6,6 +6,7 @@ import {
 import { withLayoutContext } from 'expo-router';
 import { ParamListBase, TabNavigationState } from '@react-navigation/native';
 import Header from '@/components/Header';
+import { i18n } from '@/i18n';
 
 const { Navigator } = createMaterialTopTabNavigator();
 
@@ -21,8 +22,8 @@ export default function TabLayout() {
     <>
       <Header />
       <MaterialTopTabs>
-        <MaterialTopTabs.Screen name="index" options={{ title: 'Events' }} />
-        <MaterialTopTabs.Screen name="community" options={{ title: 'Community' }} />
+        <MaterialTopTabs.Screen name="index" options={{ title: i18n.t('events') }} />
+        <MaterialTopTabs.Screen name="community" options={{ title: i18n.t('community') }} />
       </MaterialTopTabs>
     </>
   );

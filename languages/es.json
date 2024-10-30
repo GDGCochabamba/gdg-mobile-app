@@ -1,5 +1,7 @@
 {
   "loginWithGoogle": "Iniciar sesión con Google",
   "joinTheCommunity": "¡Únete a la comunidad!",
-  "welcomeMessage": "Inicia sesión para conectar con otros miembros y disfrutar de nuestros eventos."
+  "welcomeMessage": "Inicia sesión para conectar con otros miembros y disfrutar de nuestros eventos.",
+  "events": "Eventos",
+  "community": "Comunidad"
 }

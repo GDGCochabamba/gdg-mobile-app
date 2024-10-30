@@ -16,12 +16,42 @@ export const loginWithGoogle = async () => {
   }
 
   const googleCredentials = auth.GoogleAuthProvider.credential(idToken);
-  console.log('googleCredentials', googleCredentials);
   return auth().signInWithCredential(googleCredentials);
+};
+
+const getCurrentUser = () => {
+  return auth().currentUser;
+};
+
+const getGoogleUser = () => {
+  return GoogleSignin.getCurrentUser();
+};
+
+const googleSignOut = async () => {
+  if (getGoogleUser()) {
+    return GoogleSignin.signOut();
+  }
+
+  return Promise.resolve();
+};
+
+const fbSignOut = async () => {
+  if (getCurrentUser()) {
+    return auth().signOut();
+  }
+
+  return Promise.resolve();
+};
+
+const signOut = async () => {
+  await googleSignOut();
+  await fbSignOut();
 };
 
 const fbAuth = {
   loginWithGoogle,
+  signOut,
+  getCurrentUser,
 };
 
 export default fbAuth;

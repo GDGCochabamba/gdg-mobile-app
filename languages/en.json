@@ -1,5 +1,7 @@
 {
   "loginWithGoogle": "Login with Google",
   "joinTheCommunity": "¡Join the community!",
-  "welcomeMessage": "Log in to connect with other members and enjoy our events."
+  "welcomeMessage": "Log in to connect with other members and enjoy our events.",
+  "events": "Events",
+  "community": "Community"
 }
