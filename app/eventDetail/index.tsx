@@ -11,7 +11,7 @@ import DiversitySvr from '@/components/svg/DiversitySvr';
 import MapSearchSvr from '@/components/svg/MapSearchSvr';
 import EventDirection from '@/components/EventDirection';
 import PersonPlaySvr from '@/components/svg/PersonPlaySvr';
-import CardEventSection from '@/components/CardEventSection';
+import CardSection from '@/components/CardSection';
 import ActiveEventIndicator from '@/components/ActiveEventIndicator';
 import FormatListBulletedSvr from '@/components/svg/FormatListBulletedSvr';
 
@@ -48,17 +48,12 @@ export default function EventDetailScreen() {
     return (
       <View style={styles.cardsContainer}>
         <View style={styles.rowCard}>
-          <CardEventSection
-            title={i18n.t('agenda')}
-            event={event}
-            icon={<FormatListBulletedSvr />}
-            onPress={goToAgenda}
-          />
-          <CardEventSection title={i18n.t('eventMap')} event={event} icon={<MapSearchSvr />} onPress={goToMap} />
+          <CardSection title={i18n.t('agenda')} icon={<FormatListBulletedSvr />} onPress={goToAgenda} />
+          <CardSection title={i18n.t('eventMap')} icon={<MapSearchSvr />} onPress={goToMap} />
         </View>
         <View style={styles.rowCard}>
-          <CardEventSection title={i18n.t('gdgFriends')} event={event} icon={<DiversitySvr />} onPress={goToFriends} />
-          <CardEventSection title={i18n.t('contest')} event={event} icon={<PersonPlaySvr />} onPress={goToContest} />
+          <CardSection title={i18n.t('gdgFriends')} icon={<DiversitySvr />} onPress={goToFriends} />
+          <CardSection title={i18n.t('contest')} icon={<PersonPlaySvr />} onPress={goToContest} />
         </View>
       </View>
     );
@@ -70,7 +65,7 @@ export default function EventDetailScreen() {
       <TextApp text={event.name} style={styles.title} />
       <ActiveEventIndicator event={event} />
       <EventDirection event={event} />
-      <Separator marginTop={heightSizes[10]} marginBottom={heightSizes[10]} />
+      <Separator marginTop={heightSizes[10]} />
       {renderCards()}
     </View>
   );
@@ -79,15 +74,15 @@ export default function EventDetailScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: widthSizes['15'],
+    padding: widthSizes[15],
     backgroundColor: 'white',
   },
   title: {
     color: 'black',
     fontWeight: 'bold',
     fontSize: fonts[20],
-    marginTop: heightSizes['13'],
-    marginBottom: heightSizes['10'],
+    marginTop: heightSizes[13],
+    marginBottom: heightSizes[10],
   },
   notFoundContainer: {
     flex: 1,
@@ -97,10 +92,11 @@ const styles = StyleSheet.create({
   notFoundText: {
     fontSize: fonts[20],
     color: 'black',
-    marginTop: heightSizes['10'],
+    marginTop: heightSizes[10],
   },
   cardsContainer: {},
   rowCard: {
+    marginTop: heightSizes[15],
     flexDirection: 'row',
     justifyContent: 'space-between',
   },

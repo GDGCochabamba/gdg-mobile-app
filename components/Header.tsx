@@ -1,4 +1,5 @@
 import React from 'react';
+import { i18n } from '@/i18n';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 
 import ImageApp from '@/components/ImageApp';
@@ -8,20 +9,21 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 
 import useUserSession from '@/hooks/useUserSession';
 import { useThemeColor } from '@/hooks/useThemeColor';
-
-import { fonts, widthSizes } from '@/styles/Sizes';
-import { i18n } from '@/i18n';
 import useAppNavigation from '@/hooks/useAppNavigation';
+
+import { Routes } from '@/constants/Routes';
+import { fonts, widthSizes } from '@/styles/Sizes';
 
 interface Props {
   enableBack?: boolean;
+  hideProfile?: boolean;
 }
 
-export default function Header({ enableBack = false }: Props) {
+export default function Header({ enableBack = false, hideProfile = false }: Props) {
   const background = useThemeColor({}, 'background');
   const gdgColors = useThemeColor({}, 'gdgColors');
   const { user } = useUserSession();
-  const { goBack } = useAppNavigation();
+  const { goBack, navigateTo } = useAppNavigation();
 
   const renderRightSection = () => {
     if (enableBack) {
@@ -37,15 +39,23 @@ export default function Header({ enableBack = false }: Props) {
   };
 
   const renderPhoto = () => {
-    if (!user || !user.photoURL) {
+    if (!user || !user.photoURL || hideProfile) {
       return <View />;
     }
 
-    return <ImageApp source={{ uri: user!.photoURL! }} style={styles.imageProfile} />;
+    return (
+      <TouchableOpacity onPress={() => navigateTo(Routes.Root.profile)}>
+        <ImageApp source={{ uri: user!.photoURL! }} style={styles.imageProfile} />
+      </TouchableOpacity>
+    );
   };
 
   return (
-    <View style={[styles.container, { backgroundColor: background }]}>
+    <View
+      style={[
+        styles.container,
+        { backgroundColor: background, paddingVertical: hideProfile ? widthSizes[10] : widthSizes[5] },
+      ]}>
       {renderRightSection()}
       {renderPhoto()}
     </View>
@@ -55,7 +65,7 @@ export default function Header({ enableBack = false }: Props) {
 const styles = StyleSheet.create({
   container: {
     width: widthSizes.full,
-    padding: widthSizes[5],
+    paddingHorizontal: widthSizes[5],
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',

@@ -46,6 +46,7 @@ export default function RootLayout() {
               <Stack.Screen name={Routes.Root.home} options={GeneralScreenOptions} />
               <Stack.Screen name={Routes.Root.topTabs} options={GeneralScreenOptions} />
               <Stack.Screen name={Routes.Root.eventDetail} options={GeneralScreenOptions} />
+              <Stack.Screen name={Routes.Root.profile} options={GeneralScreenOptions} />
             </Stack>
           </View>
         </View>

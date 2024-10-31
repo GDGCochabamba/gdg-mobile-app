@@ -1,19 +1,17 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 import TextApp from '@/components/texts/TextApp';
 
-import { FbEvent } from '@/models/FbEvent';
 import { heightSizes, widthSizes } from '@/styles/Sizes';
 import { useThemeColor } from '@/hooks/useThemeColor';
 
 interface Props {
   title: string;
-  event: FbEvent;
   icon: any;
   onPress?: () => void;
 }
 
-export default function CardEventSection({ title, icon, onPress }: Props) {
+export default function CardSection({ title, icon, onPress }: Props) {
   const cardBorder = useThemeColor({}, 'cardBorder');
 
   return (
@@ -33,7 +31,6 @@ const styles = StyleSheet.create({
     height: heightSizes['120'],
     borderRadius: 10,
     padding: widthSizes['10'],
-    margin: widthSizes['10'],
     backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',

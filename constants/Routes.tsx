@@ -7,6 +7,7 @@ export const Routes = {
     notFound: '+not-found',
     topTabs: '(top-tabs)',
     eventDetail: 'eventDetail',
+    profile: 'profile',
   },
   NotFound: '*',
 };

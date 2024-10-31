@@ -9,5 +9,11 @@
   "agenda": "Agenda",
   "eventMap": "Event map",
   "gdgFriends": "GDG Friends",
-  "contest": "Contest"
+  "contest": "Contest",
+  "anonymous": "Anonymous",
+  "logout": "Logout",
+  "socialMedia": "Social Media",
+  "content": "Content",
+  "activityRanking": "Activity Ranking",
+  "totalPoints": "Total Points"
 }
