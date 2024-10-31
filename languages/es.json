@@ -3,5 +3,11 @@
   "joinTheCommunity": "¡Únete a la comunidad!",
   "welcomeMessage": "Inicia sesión para conectar con otros miembros y disfrutar de nuestros eventos.",
   "events": "Eventos",
-  "community": "Comunidad"
+  "community": "Comunidad",
+  "goBack": "Volver",
+  "eventNotFound": "Evento no encontrado",
+  "agenda": "Agenda",
+  "eventMap": "Mapa del evento",
+  "gdgFriends": "Amigos GDG",
+  "contest": "Concurso"
 }

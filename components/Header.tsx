@@ -1,26 +1,52 @@
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 
 import ImageApp from '@/components/ImageApp';
+import TextApp from '@/components/texts/TextApp';
 import GDGLogoSvr from '@/components/svg/GDGLogoSvr';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
-import { withSizes } from '@/styles/Sizes';
 import useUserSession from '@/hooks/useUserSession';
+import { useThemeColor } from '@/hooks/useThemeColor';
 
-export default function Header() {
+import { fonts, withSizes } from '@/styles/Sizes';
+import { i18n } from '@/i18n';
+import useAppNavigation from '@/hooks/useAppNavigation';
+
+interface Props {
+  enableBack?: boolean;
+}
+
+export default function Header({ enableBack = false }: Props) {
+  const background = useThemeColor({}, 'background');
+  const gdgColors = useThemeColor({}, 'gdgColors');
   const { user } = useUserSession();
+  const { goBack } = useAppNavigation();
+
+  const renderRightSection = () => {
+    if (enableBack) {
+      return (
+        <TouchableOpacity onPress={goBack} style={styles.goBackContainer}>
+          <Ionicons name="chevron-back-outline" size={24} color={gdgColors.blue} />
+          <TextApp text={i18n.t('goBack')} style={[styles.goBackText, { color: gdgColors.blue }]} />
+        </TouchableOpacity>
+      );
+    }
+
+    return <GDGLogoSvr />;
+  };
 
   const renderPhoto = () => {
-    if (!user) {
+    if (!user || !user.photoURL) {
       return <View />;
     }
 
-    return <ImageApp source={{ uri: user.photoURL }} style={styles.imageProfile} />;
+    return <ImageApp source={{ uri: user!.photoURL! }} style={styles.imageProfile} />;
   };
 
   return (
-    <View style={styles.container}>
-      <GDGLogoSvr />
+    <View style={[styles.container, { backgroundColor: background }]}>
+      {renderRightSection()}
       {renderPhoto()}
     </View>
   );
@@ -32,7 +58,6 @@ const styles = StyleSheet.create({
     padding: withSizes[5],
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#fff',
     justifyContent: 'space-between',
   },
   imageProfile: {
@@ -40,5 +65,12 @@ const styles = StyleSheet.create({
     right: withSizes[5],
     width: withSizes[30],
     height: withSizes[30],
+  },
+  goBackContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  goBackText: {
+    fontSize: fonts[17],
   },
 });

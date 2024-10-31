@@ -11,10 +11,14 @@ export const Colors = {
   light: {
     text: '#11181C',
     background: '#fff',
+    backgroundList: '#eeefef',
     tint: tintColorLight,
     icon: '#687076',
     tabIconDefault: '#687076',
     tabIconSelected: tintColorLight,
+    disable: '#DAE0E3',
+    date: '#6D757A',
+    blue: '#007AFF',
     forms: {
       outputRange: outputRange,
     },
@@ -27,15 +31,25 @@ export const Colors = {
         button: '#333333',
         textButton: '#ffffff',
       },
+    },
+    gdgColors: {
+      blue: '#2475E5',
+      red: '#E84434',
+      green: '#0A9D58',
+      yellow: '#F6B918',
     },
   },
   dark: {
     text: '#ECEDEE',
     background: '#151718',
+    backgroundList: '#1a1a1a',
     tint: tintColorDark,
     icon: '#9BA1A6',
     tabIconDefault: '#9BA1A6',
     tabIconSelected: tintColorDark,
+    disable: '#DAE0E3',
+    date: '#6D757A',
+    blue: '#007AFF',
     forms: {
       outputRange: outputRange,
     },
@@ -48,6 +62,12 @@ export const Colors = {
         button: '#333333',
         textButton: '#ffffff',
       },
+    },
+    gdgColors: {
+      blue: '#2475E5',
+      red: '#E84434',
+      green: '#0A9D58',
+      yellow: '#F6B918',
     },
   },
 };

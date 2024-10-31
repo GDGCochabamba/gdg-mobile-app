@@ -11,9 +11,14 @@ const useAppNavigation = () => {
     router.replace(route as any);
   };
 
+  const goBack = () => {
+    router.back();
+  };
+
   return {
     navigateTo,
     replaceTo,
+    goBack,
   };
 };
 

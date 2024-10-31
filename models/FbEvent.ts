@@ -30,6 +30,9 @@ export interface End {
 export interface Location {
   geolocation: GeoPoint;
   name: string;
+  address: string;
+  city: string;
+  country: string;
 }
 
 export interface Price {

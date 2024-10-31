@@ -15,6 +15,9 @@ const withSizes = {
   full: width,
   100: scaleWidth(100),
   90: scaleWidth(90),
+  60: scaleWidth(60),
+  40: scaleWidth(40),
+  35: scaleWidth(35),
   30: scaleWidth(30),
   20: scaleWidth(20),
   15: scaleWidth(15),
@@ -41,11 +44,18 @@ const heightSizes = {
   25: scaleHeight(25),
   20: scaleHeight(20),
   18: scaleHeight(18),
+  15: scaleHeight(15),
+  13: scaleHeight(13),
   10: scaleHeight(10),
+  5: scaleHeight(5),
+  4: scaleHeight(4),
+  2: scaleHeight(2),
+  1: scaleHeight(1),
 };
 
 const fonts = {
   20: scaleFont(20),
+  17: scaleFont(17),
   16: scaleFont(16),
   12: scaleFont(12),
 };

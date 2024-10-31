@@ -3,5 +3,11 @@
   "joinTheCommunity": "¡Join the community!",
   "welcomeMessage": "Log in to connect with other members and enjoy our events.",
   "events": "Events",
-  "community": "Community"
+  "community": "Community",
+  "goBack": "Go back",
+  "eventNotFound": "Event not found",
+  "agenda": "Agenda",
+  "eventMap": "Event map",
+  "gdgFriends": "GDG Friends",
+  "contest": "Contest"
 }

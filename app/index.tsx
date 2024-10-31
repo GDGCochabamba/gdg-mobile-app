@@ -1,11 +1,13 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, StyleSheet } from 'react-native';
+
+import GDGIconSvr from '@/components/svg/GDGIconSvr';
 
 import useInterval from '@/hooks/useInterval';
+import useUserSession from '@/hooks/useUserSession';
 import useAppNavigation from '@/hooks/useAppNavigation';
 
 import { Routes } from '@/constants/Routes';
-import useUserSession from '@/hooks/useUserSession';
 
 export default function MainApp() {
   const { user } = useUserSession();
@@ -22,8 +24,17 @@ export default function MainApp() {
   useInterval(verifyNavigation, 1000);
 
   return (
-    <View>
-      <Text>MainApp</Text>
+    <View style={styles.container}>
+      <GDGIconSvr />
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+  },
+});
