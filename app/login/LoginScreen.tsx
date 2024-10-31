@@ -11,7 +11,7 @@ import GoogleLogoSvr from '@/components/svg/GoogleLogoSvr';
 
 import { useThemeColor } from '@/hooks/useThemeColor';
 
-import { fonts, heightSizes, withSizes } from '@/styles/Sizes';
+import { fonts, heightSizes, widthSizes } from '@/styles/Sizes';
 
 interface Props {
   loginWithGoogle: () => void;
@@ -69,12 +69,12 @@ const styles = StyleSheet.create({
   },
   gdgIcon: {
     alignItems: 'center',
-    width: withSizes['full'],
+    width: widthSizes['full'],
     marginTop: heightSizes['130'],
   },
   textContainer: {
     alignItems: 'center',
-    paddingHorizontal: withSizes['30'],
+    paddingHorizontal: widthSizes['30'],
   },
   joinTheCommunity: {
     fontSize: fonts['16'],
@@ -87,14 +87,14 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   centerContent: {
-    width: withSizes['full'],
+    width: widthSizes['full'],
     marginTop: heightSizes['70'],
-    paddingHorizontal: withSizes['30'],
+    paddingHorizontal: widthSizes['30'],
   },
   gdgLogo: {
     alignItems: 'center',
     position: 'absolute',
-    width: withSizes['full'],
+    width: widthSizes['full'],
     bottom: heightSizes['10'],
   },
 });

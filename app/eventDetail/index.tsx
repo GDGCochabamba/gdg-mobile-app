@@ -7,13 +7,33 @@ import Separator from '@/components/Separator';
 import EventDate from '@/components/EventDate';
 import TextApp from '@/components/texts/TextApp';
 import GDGIconSvr from '@/components/svg/GDGIconSvr';
+import DiversitySvr from '@/components/svg/DiversitySvr';
+import MapSearchSvr from '@/components/svg/MapSearchSvr';
 import EventDirection from '@/components/EventDirection';
-import ActiveEventIndicator from '@/components/ActiveEventIndicator';
-
-import { fonts, heightSizes, withSizes } from '@/styles/Sizes';
+import PersonPlaySvr from '@/components/svg/PersonPlaySvr';
 import CardEventSection from '@/components/CardEventSection';
+import ActiveEventIndicator from '@/components/ActiveEventIndicator';
+import FormatListBulletedSvr from '@/components/svg/FormatListBulletedSvr';
+
+import { fonts, heightSizes, widthSizes } from '@/styles/Sizes';
 
 export default function EventDetailScreen() {
+  const goToAgenda = () => {
+    console.log('Go to agenda');
+  };
+
+  const goToMap = () => {
+    console.log('Go to map');
+  };
+
+  const goToFriends = () => {
+    console.log('Go to friends');
+  };
+
+  const goToContest = () => {
+    console.log('Go to contest');
+  };
+
   const event = useEventStore((state) => state.event);
   if (!event) {
     return (
@@ -28,12 +48,17 @@ export default function EventDetailScreen() {
     return (
       <View style={styles.cardsContainer}>
         <View style={styles.rowCard}>
-          <CardEventSection title={i18n.t('agenda')} event={event} />
-          <CardEventSection title={i18n.t('eventMap')} event={event} />
+          <CardEventSection
+            title={i18n.t('agenda')}
+            event={event}
+            icon={<FormatListBulletedSvr />}
+            onPress={goToAgenda}
+          />
+          <CardEventSection title={i18n.t('eventMap')} event={event} icon={<MapSearchSvr />} onPress={goToMap} />
         </View>
         <View style={styles.rowCard}>
-          <CardEventSection title={i18n.t('gdgFriends')} event={event} />
-          <CardEventSection title={i18n.t('contest')} event={event} />
+          <CardEventSection title={i18n.t('gdgFriends')} event={event} icon={<DiversitySvr />} onPress={goToFriends} />
+          <CardEventSection title={i18n.t('contest')} event={event} icon={<PersonPlaySvr />} onPress={goToContest} />
         </View>
       </View>
     );
@@ -53,7 +78,9 @@ export default function EventDetailScreen() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: withSizes['15'],
+    flex: 1,
+    padding: widthSizes['15'],
+    backgroundColor: 'white',
   },
   title: {
     color: 'black',

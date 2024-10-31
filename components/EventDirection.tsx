@@ -2,12 +2,12 @@ import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 
 import TextApp from '@/components/texts/TextApp';
-import DistanceSvg from '@/components/svg/DistanceSvg';
-import DirectionsSvg from '@/components/svg/DirectionsSvg';
+import DistanceSvr from '@/components/svg/DistanceSvr';
+import DirectionsSvr from '@/components/svg/DirectionsSvr';
 
 import dateUtils from '@/utils/dateUtils';
 import mapUtils from '@/utils/mapUtils';
-import { heightSizes, withSizes } from '@/styles/Sizes';
+import { heightSizes, widthSizes } from '@/styles/Sizes';
 
 import { FbEvent } from '@/models/FbEvent';
 
@@ -19,7 +19,7 @@ export default function EventDirection({ event }: Props) {
   return (
     <View style={styles.directionContainer}>
       <View style={styles.directionTextContainer}>
-        <DistanceSvg />
+        <DistanceSvr />
         <View style={styles.textContainer}>
           <TextApp text={event.location.name} style={[styles.dateEvent, { fontWeight: 'bold' }]} />
           <TextApp text={`${event.location.address},`} style={styles.addressEvent} />
@@ -27,7 +27,7 @@ export default function EventDirection({ event }: Props) {
         </View>
       </View>
       <TouchableOpacity onPress={() => mapUtils.openMapsByEvent(event)}>
-        <DirectionsSvg isActive={dateUtils.eventIsActive(event)} />
+        <DirectionsSvr isActive={dateUtils.eventIsActive(event)} />
       </TouchableOpacity>
     </View>
   );
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   textContainer: {
-    marginLeft: withSizes['10'],
+    marginLeft: widthSizes['10'],
   },
   dateEvent: {
     color: 'black',

@@ -4,7 +4,7 @@ import TextApp from '@/components/texts/TextApp';
 
 import { useThemeColor } from '@/hooks/useThemeColor';
 
-import { withSizes } from '@/styles/Sizes';
+import { widthSizes } from '@/styles/Sizes';
 
 interface MainButtonProps extends PressableProps {
   text: string;
@@ -22,7 +22,7 @@ const MainButton = ({ text, onPress, leftIcon, style = {} }: MainButtonProps) =>
         <View style={styles.leftIconContainer}>
           {leftIcon}
           <TextApp
-            style={[styles.text, { color: buttonColor.primary.textButton, marginLeft: withSizes['10'] }]}
+            style={[styles.text, { color: buttonColor.primary.textButton, marginLeft: widthSizes['10'] }]}
             text={text}
           />
         </View>

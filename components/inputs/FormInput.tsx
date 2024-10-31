@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { View, TextInput, Animated, StyleSheet, type TextInputProps } from 'react-native';
 
-import { fonts, heightSizes, withSizes } from '@/styles/Sizes';
+import { fonts, heightSizes, widthSizes } from '@/styles/Sizes';
 import { useThemeColor } from '@/hooks/useThemeColor';
 import useInputValue from '@/hooks/useInputValue';
 
@@ -26,10 +26,10 @@ const FormInput = ({ label, type = 'default', ...props }: FormInputProps) => {
 
   const labelStyle: any = {
     position: 'absolute',
-    left: withSizes['10'],
+    left: widthSizes['10'],
     top: animatedLabelPosition.interpolate({
       inputRange: [0, 1],
-      outputRange: [withSizes['18'], -withSizes['10']],
+      outputRange: [widthSizes['18'], -widthSizes['10']],
     }),
     fontSize: animatedLabelPosition.interpolate({
       inputRange: [0, 1],
@@ -58,22 +58,22 @@ const FormInput = ({ label, type = 'default', ...props }: FormInputProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: withSizes['18'],
-    marginVertical: withSizes['10'],
+    paddingVertical: widthSizes['18'],
+    marginVertical: widthSizes['10'],
   },
   label: {
     position: 'absolute',
-    left: withSizes['10'],
+    left: widthSizes['10'],
     color: '#aaa',
     backgroundColor: 'white',
-    paddingHorizontal: withSizes['2'],
+    paddingHorizontal: widthSizes['2'],
   },
   input: {
     height: heightSizes['40'],
     borderColor: '#000',
     borderBottomWidth: 1,
     fontSize: fonts['16'],
-    paddingHorizontal: withSizes['10'],
+    paddingHorizontal: widthSizes['10'],
   },
 });
 

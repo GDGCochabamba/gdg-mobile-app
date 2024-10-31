@@ -11,7 +11,7 @@ import useAppNavigation from '@/hooks/useAppNavigation';
 import { useEventStore } from '@/zustand/store';
 import { Routes } from '@/constants/Routes';
 
-import { fonts, heightSizes, withSizes } from '@/styles/Sizes';
+import { fonts, heightSizes, widthSizes } from '@/styles/Sizes';
 import { FbEvent } from '@/models/FbEvent';
 
 interface Props {
@@ -44,9 +44,9 @@ export default function Event({ event }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: withSizes['10'],
-    marginHorizontal: withSizes['15'],
-    padding: withSizes['15'],
+    marginTop: widthSizes['10'],
+    marginHorizontal: widthSizes['15'],
+    padding: widthSizes['15'],
     width: 'auto',
     justifyContent: 'center',
     borderRadius: 20,

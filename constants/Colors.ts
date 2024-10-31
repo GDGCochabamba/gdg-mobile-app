@@ -19,6 +19,7 @@ export const Colors = {
     disable: '#DAE0E3',
     date: '#6D757A',
     blue: '#007AFF',
+    cardBorder: '#CAC4D0',
     forms: {
       outputRange: outputRange,
     },
@@ -50,6 +51,7 @@ export const Colors = {
     disable: '#DAE0E3',
     date: '#6D757A',
     blue: '#007AFF',
+    cardBorder: '#CAC4D0',
     forms: {
       outputRange: outputRange,
     },

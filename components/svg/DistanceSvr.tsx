@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Svg, { SvgProps, Path } from 'react-native-svg';
 
-const DistanceSvg = (props: SvgProps) => (
+const DistanceSvr = (props: SvgProps) => (
   <Svg width={14} height={20} fill="none" {...props}>
     <Path
       fill="#6D757A"
@@ -9,4 +9,4 @@ const DistanceSvg = (props: SvgProps) => (
     />
   </Svg>
 );
-export default DistanceSvg;
+export default DistanceSvr;

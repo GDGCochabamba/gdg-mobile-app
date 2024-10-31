@@ -9,7 +9,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import useUserSession from '@/hooks/useUserSession';
 import { useThemeColor } from '@/hooks/useThemeColor';
 
-import { fonts, withSizes } from '@/styles/Sizes';
+import { fonts, widthSizes } from '@/styles/Sizes';
 import { i18n } from '@/i18n';
 import useAppNavigation from '@/hooks/useAppNavigation';
 
@@ -54,17 +54,17 @@ export default function Header({ enableBack = false }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    width: withSizes.full,
-    padding: withSizes[5],
+    width: widthSizes.full,
+    padding: widthSizes[5],
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
   },
   imageProfile: {
     borderRadius: 50,
-    right: withSizes[5],
-    width: withSizes[30],
-    height: withSizes[30],
+    right: widthSizes[5],
+    width: widthSizes[30],
+    height: widthSizes[30],
   },
   goBackContainer: {
     flexDirection: 'row',

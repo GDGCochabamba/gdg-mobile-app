@@ -5,7 +5,7 @@ interface Props extends SvgProps {
   isActive?: boolean;
 }
 
-const DirectionsSvg = ({ isActive = false, ...props }: Props) => {
+const DirectionsSvr = ({ isActive = false, ...props }: Props) => {
   return (
     <Svg width={34} height={34} fill="none" {...props}>
       <Path
@@ -15,4 +15,4 @@ const DirectionsSvg = ({ isActive = false, ...props }: Props) => {
     </Svg>
   );
 };
-export default DirectionsSvg;
+export default DirectionsSvr;
