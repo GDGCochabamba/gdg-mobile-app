@@ -8,6 +8,10 @@ export const Routes = {
     topTabs: '(top-tabs)',
     eventDetail: 'eventDetail',
     profile: 'profile',
+    eventMap: 'eventMap',
+    agenda: 'agenda',
+    friendsGDG: 'friendsGDG',
+    contest: 'contest',
   },
   NotFound: '*',
 };

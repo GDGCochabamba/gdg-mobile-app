@@ -9,6 +9,7 @@ import MainButton from '@/components/buttons/MainButton';
 import useUserSession from '@/hooks/useUserSession';
 
 import { fonts, widthSizes } from '@/styles/Sizes';
+import QRCode from 'react-native-qrcode-svg';
 
 export default function ProfileScreen() {
   const { user, logout } = useUserSession();
@@ -23,6 +24,9 @@ export default function ProfileScreen() {
         <View style={styles.nameContainer}>
           <TextApp text={user?.displayName || i18n.t('anonymous')} style={styles.nameText} />
         </View>
+      </View>
+      <View style={styles.body}>
+        <QRCode value={user.uid} size={widthSizes[200]} />
       </View>
       <View style={styles.actionContainer}>
         <MainButton text={i18n.t('logout')} onPress={logout} />
@@ -59,5 +63,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     marginBottom: widthSizes[20],
+  },
+  body: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 });

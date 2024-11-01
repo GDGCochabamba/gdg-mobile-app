@@ -13,6 +13,7 @@ const scaleFont = (size: any) => size * PixelRatio.getFontScale();
 
 const widthSizes = {
   full: width,
+  200: scaleWidth(200),
   120: scaleWidth(120),
   100: scaleWidth(100),
   90: scaleWidth(90),

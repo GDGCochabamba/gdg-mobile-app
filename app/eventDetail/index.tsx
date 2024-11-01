@@ -15,26 +15,31 @@ import CardSection from '@/components/CardSection';
 import ActiveEventIndicator from '@/components/ActiveEventIndicator';
 import FormatListBulletedSvr from '@/components/svg/FormatListBulletedSvr';
 
+import useAppNavigation from '@/hooks/useAppNavigation';
+
 import { fonts, heightSizes, widthSizes } from '@/styles/Sizes';
+import { Routes } from '@/constants/Routes';
 
 export default function EventDetailScreen() {
+  const { navigateTo } = useAppNavigation();
+  const event = useEventStore((state) => state.event);
+
   const goToAgenda = () => {
-    console.log('Go to agenda');
+    navigateTo(Routes.Root.agenda);
   };
 
   const goToMap = () => {
-    console.log('Go to map');
+    navigateTo(Routes.Root.eventMap);
   };
 
   const goToFriends = () => {
-    console.log('Go to friends');
+    navigateTo(Routes.Root.friendsGDG);
   };
 
   const goToContest = () => {
-    console.log('Go to contest');
+    navigateTo(Routes.Root.contest);
   };
 
-  const event = useEventStore((state) => state.event);
   if (!event) {
     return (
       <View style={styles.notFoundContainer}>

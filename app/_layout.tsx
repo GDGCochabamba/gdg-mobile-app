@@ -47,6 +47,10 @@ export default function RootLayout() {
               <Stack.Screen name={Routes.Root.topTabs} options={GeneralScreenOptions} />
               <Stack.Screen name={Routes.Root.eventDetail} options={GeneralScreenOptions} />
               <Stack.Screen name={Routes.Root.profile} options={GeneralScreenOptions} />
+              <Stack.Screen name={Routes.Root.eventMap} options={GeneralScreenOptions} />
+              <Stack.Screen name={Routes.Root.agenda} options={GeneralScreenOptions} />
+              <Stack.Screen name={Routes.Root.friendsGDG} options={GeneralScreenOptions} />
+              <Stack.Screen name={Routes.Root.contest} options={GeneralScreenOptions} />
             </Stack>
           </View>
         </View>
