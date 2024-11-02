@@ -1,9 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import EventDate from '@/components/EventDate';
 import TextApp from '@/components/texts/TextApp';
 import EventDirection from '@/components/EventDirection';
+import RegistrationStatus from '@/components/RegistrationStatus';
 import ActiveEventIndicator from '@/components/ActiveEventIndicator';
 
 import useAppNavigation from '@/hooks/useAppNavigation';
@@ -13,12 +14,14 @@ import { Routes } from '@/constants/Routes';
 
 import { fonts, heightSizes, widthSizes } from '@/styles/Sizes';
 import { FbEvent } from '@/models/FbEvent';
+import { FBEventRecord } from '@/models/FbEventRecord';
 
 interface Props {
   event: FbEvent;
+  eventRecords: FBEventRecord[];
 }
 
-export default function Event({ event }: Props) {
+export default function Event({ event, eventRecords = [] }: Props) {
   const { navigateTo } = useAppNavigation();
   const changeEvent = useEventStore((state) => state.changeEvent);
 
@@ -27,17 +30,13 @@ export default function Event({ event }: Props) {
     navigateTo(Routes.Root.eventDetail);
   };
 
-  const registrationStatus = () => {
-    return <View></View>;
-  };
-
   return (
     <TouchableOpacity onPress={goToDetail} style={[styles.container, styles.card, { backgroundColor: 'white' }]}>
       <EventDate event={event} />
       <TextApp text={event.name} style={styles.title} />
       <ActiveEventIndicator event={event} />
       <EventDirection event={event} />
-      {registrationStatus()}
+      <RegistrationStatus event={event} eventRecords={eventRecords} />
     </TouchableOpacity>
   );
 }

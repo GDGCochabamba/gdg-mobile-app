@@ -7,7 +7,7 @@ import { heightSizes } from '@/styles/Sizes';
 import { useThemeColor } from '@/hooks/useThemeColor';
 
 import { FbEvent } from '@/models/FbEvent';
-import dateUtils from '@/utils/dateUtils';
+import eventUtils from '@/utils/eventUtils';
 
 interface Props {
   event: FbEvent;
@@ -16,7 +16,7 @@ interface Props {
 export default function ActiveEventIndicator({ event }: Props) {
   const gdgColors = useThemeColor({}, 'gdgColors');
 
-  if (event && !dateUtils.eventIsActive(event)) {
+  if (event && !eventUtils.eventIsActive(event)) {
     return <Separator />;
   }
 

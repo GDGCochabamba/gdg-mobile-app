@@ -5,8 +5,8 @@ import TextApp from '@/components/texts/TextApp';
 import DistanceSvr from '@/components/svg/DistanceSvr';
 import DirectionsSvr from '@/components/svg/DirectionsSvr';
 
-import dateUtils from '@/utils/dateUtils';
 import mapUtils from '@/utils/mapUtils';
+import eventUtils from '@/utils/eventUtils';
 import { heightSizes, widthSizes } from '@/styles/Sizes';
 
 import { FbEvent } from '@/models/FbEvent';
@@ -27,7 +27,7 @@ export default function EventDirection({ event }: Props) {
         </View>
       </View>
       <TouchableOpacity onPress={() => mapUtils.openMapsByEvent(event)}>
-        <DirectionsSvr isActive={dateUtils.eventIsActive(event)} />
+        <DirectionsSvr isActive={eventUtils.eventIsActive(event)} />
       </TouchableOpacity>
     </View>
   );

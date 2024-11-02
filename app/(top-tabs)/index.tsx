@@ -10,9 +10,9 @@ import { useThemeColor } from '@/hooks/useThemeColor';
 export default function EventsScreen() {
   const background = useThemeColor({}, 'background');
   const backgroundList = useThemeColor({}, 'backgroundList');
-  const { events } = EventTabService.useEventTabService();
+  const { events, eventRecords } = EventTabService.useEventTabService();
 
-  const renderEvent = ({ item }: { item: FbEvent }) => <Event event={item} />;
+  const renderEvent = ({ item }: { item: FbEvent }) => <Event event={item} eventRecords={eventRecords} />;
 
   return (
     <View style={[styles.container, { backgroundColor: background }]}>

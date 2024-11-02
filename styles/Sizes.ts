@@ -62,6 +62,7 @@ const fonts = {
   20: scaleFont(20),
   17: scaleFont(17),
   16: scaleFont(16),
+  14: scaleFont(14),
   12: scaleFont(12),
 };
 

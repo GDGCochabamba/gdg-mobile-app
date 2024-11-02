@@ -3,13 +3,15 @@ import fbFirestore from '@/firebase/fbFirestore';
 
 import useUserSession from '@/hooks/useUserSession';
 
+import fbEventRecords from '@/firebase/firestore/fbEventRecords';
+
+import { FBEventRecord } from '@/models/FbEventRecord';
 import { FbEvent } from '@/models/FbEvent';
-import fbPayments from '@/firebase/firestore/fbPayments';
 
 const useEventTabService = () => {
   const { user } = useUserSession();
   const [events, setEvents] = useState<FbEvent[]>([]);
-  const [payment, setPayment] = useState<any | null>(null);
+  const [eventRecords, setEventRecords] = useState<FBEventRecord[]>([]);
 
   const getAllEvents = async () => {
     const results = await fbFirestore.fbEvents.getAllEvents();
@@ -18,21 +20,21 @@ const useEventTabService = () => {
     }
   };
 
-  const getPaymentByEmail = async () => {
+  const getEventRecordsByEmail = async () => {
     if (!user || !user.email) {
       return;
     }
 
-    const newPayment = await fbPayments.getPaymentByEmail(user.email);
-    if (newPayment) {
-      setPayment(newPayment);
+    const eventRecords: FBEventRecord[] = await fbEventRecords.getEventRecordByEmail(user.email);
+    if (eventRecords) {
+      setEventRecords(eventRecords);
     }
   };
 
   const getData = async () => {
     if (user) {
       await getAllEvents();
-      // await getPaymentByEmail();
+      await getEventRecordsByEmail();
     }
   };
 
@@ -40,7 +42,7 @@ const useEventTabService = () => {
     getData().then();
   }, [user]);
 
-  return { events };
+  return { events, eventRecords };
 };
 
 const EventTabService = {
