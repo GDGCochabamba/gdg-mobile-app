@@ -1,5 +1,4 @@
 import firestore from '@react-native-firebase/firestore';
-import { FBEventRecord } from '@/models/FbEventRecord';
 
 const getEventRecordByEmail = async (email: string) => {
   let eventRecord: any[] = [];

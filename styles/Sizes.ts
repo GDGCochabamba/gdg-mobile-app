@@ -43,6 +43,7 @@ const heightSizes = {
   80: scaleHeight(80),
   70: scaleHeight(70),
   50: scaleHeight(50),
+  45: scaleHeight(45),
   40: scaleHeight(40),
   35: scaleHeight(35),
   30: scaleHeight(30),
@@ -54,6 +55,7 @@ const heightSizes = {
   10: scaleHeight(10),
   5: scaleHeight(5),
   4: scaleHeight(4),
+  3: scaleHeight(3),
   2: scaleHeight(2),
   1: scaleHeight(1),
 };

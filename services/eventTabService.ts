@@ -10,6 +10,7 @@ import { FbEvent } from '@/models/FbEvent';
 
 const useEventTabService = () => {
   const { user } = useUserSession();
+  const [loading, setLoading] = useState(false);
   const [events, setEvents] = useState<FbEvent[]>([]);
   const [eventRecords, setEventRecords] = useState<FBEventRecord[]>([]);
 
@@ -32,17 +33,19 @@ const useEventTabService = () => {
   };
 
   const getData = async () => {
+    setLoading(true);
     if (user) {
       await getAllEvents();
       await getEventRecordsByEmail();
     }
+    setLoading(false);
   };
 
   useEffect(() => {
     getData().then();
   }, [user]);
 
-  return { events, eventRecords };
+  return { events, eventRecords, loading, getData };
 };
 
 const EventTabService = {

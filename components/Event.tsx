@@ -26,7 +26,7 @@ export default function Event({ event, eventRecords = [] }: Props) {
   const changeEvent = useEventStore((state) => state.changeEvent);
 
   const goToDetail = () => {
-    changeEvent(event);
+    changeEvent(event, eventRecords);
     navigateTo(Routes.Root.eventDetail);
   };
 
@@ -36,7 +36,7 @@ export default function Event({ event, eventRecords = [] }: Props) {
       <TextApp text={event.name} style={styles.title} />
       <ActiveEventIndicator event={event} />
       <EventDirection event={event} />
-      <RegistrationStatus event={event} eventRecords={eventRecords} />
+      {event && <RegistrationStatus event={event} eventRecords={eventRecords} />}
     </TouchableOpacity>
   );
 }

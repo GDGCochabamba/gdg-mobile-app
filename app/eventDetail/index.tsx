@@ -19,10 +19,11 @@ import useAppNavigation from '@/hooks/useAppNavigation';
 
 import { fonts, heightSizes, widthSizes } from '@/styles/Sizes';
 import { Routes } from '@/constants/Routes';
+import EventCredential from '@/components/EventCredential';
 
 export default function EventDetailScreen() {
   const { navigateTo } = useAppNavigation();
-  const event = useEventStore((state) => state.event);
+  const { event, eventRecords } = useEventStore((state) => state.data);
 
   const goToAgenda = () => {
     navigateTo(Routes.Root.agenda);
@@ -72,6 +73,7 @@ export default function EventDetailScreen() {
       <EventDirection event={event} />
       <Separator marginTop={heightSizes[10]} />
       {renderCards()}
+      <EventCredential event={event} eventRecords={eventRecords || []} />
     </View>
   );
 }

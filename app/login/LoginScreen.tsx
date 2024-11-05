@@ -12,12 +12,14 @@ import GoogleLogoSvr from '@/components/svg/GoogleLogoSvr';
 import { useThemeColor } from '@/hooks/useThemeColor';
 
 import { fonts, heightSizes, widthSizes } from '@/styles/Sizes';
+import Loading from '@/components/Loading';
 
 interface Props {
   loginWithGoogle: () => void;
+  loading: boolean;
 }
 
-export default function LoginScreen({ loginWithGoogle }: Props) {
+export default function LoginScreen({ loginWithGoogle, loading }: Props) {
   const buttonColor = useThemeColor({}, 'buttons');
 
   const renderGDGIcon = () => {
@@ -47,6 +49,7 @@ export default function LoginScreen({ loginWithGoogle }: Props) {
 
   return (
     <View style={styles.container}>
+      <Loading loading={loading} />
       {renderGDGIcon()}
       <View style={styles.centerContent}>
         {renderWelcome()}

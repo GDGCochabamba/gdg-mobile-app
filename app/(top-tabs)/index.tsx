@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, FlatList } from 'react-native';
+import { View, StyleSheet, FlatList, RefreshControl } from 'react-native';
 
 import Event from '@/components/Event';
 import EventTabService from '@/services/eventTabService';
@@ -10,7 +10,7 @@ import { useThemeColor } from '@/hooks/useThemeColor';
 export default function EventsScreen() {
   const background = useThemeColor({}, 'background');
   const backgroundList = useThemeColor({}, 'backgroundList');
-  const { events, eventRecords } = EventTabService.useEventTabService();
+  const { events, eventRecords, loading, getData } = EventTabService.useEventTabService();
 
   const renderEvent = ({ item }: { item: FbEvent }) => <Event event={item} eventRecords={eventRecords} />;
 
@@ -20,6 +20,7 @@ export default function EventsScreen() {
         renderItem={renderEvent}
         data={events}
         style={[styles.eventsContainer, { backgroundColor: backgroundList }]}
+        refreshControl={<RefreshControl refreshing={loading} onRefresh={() => getData()} />}
       />
     </View>
   );

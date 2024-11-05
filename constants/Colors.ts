@@ -10,6 +10,7 @@ const outputRange = ['#aaa', '#000'];
 export const Colors = {
   light: {
     text: '#11181C',
+    white: '#ffffff',
     background: '#fff',
     backgroundList: '#eeefef',
     tint: tintColorLight,
@@ -42,6 +43,7 @@ export const Colors = {
   },
   dark: {
     text: '#ECEDEE',
+    white: '#ffffff',
     background: '#151718',
     backgroundList: '#1a1a1a',
     tint: tintColorDark,

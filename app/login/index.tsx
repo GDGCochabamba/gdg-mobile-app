@@ -3,7 +3,7 @@ import LoginScreen from '@/app/login/LoginScreen';
 import LoginScreenService from '@/services/loginScreenService';
 
 export default function LoginScreenController() {
-  const { loginWithGoogle } = LoginScreenService.useLoginScreenService();
+  const { loginWithGoogle, loading } = LoginScreenService.useLoginScreenService();
 
-  return <LoginScreen loginWithGoogle={loginWithGoogle} />;
+  return <LoginScreen loginWithGoogle={loginWithGoogle} loading={loading} />;
 }

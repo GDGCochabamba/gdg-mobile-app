@@ -16,5 +16,14 @@
   "content": "Contenido",
   "activityRanking": "Ranking de actividad",
   "totalPoints": "Total Puntos",
-  "youAreRegistered": "Estás registrado!"
+  "youAreRegistered": "Estás registrado!",
+  "youAreNotRegistered": "No estás registrado!",
+  "registrationOpen": "Inscripciones abiertas",
+  "registrationClosed": "Inscripciones cerradas",
+  "loading": "Cargando...",
+  "yourCredentialOfEvent": "Tu credencial del evento",
+  "yourCredentialEventMessage": "El día del evento podrás encontrar tu credencial aquí.",
+  "weHaveLimitedSpots": "Tenemos cupos limitados",
+  "registrationAlertMessage": "No pierdas el tuyo e inscribete hoy",
+  "signUpHere": "Regístrate aquí"
 }
