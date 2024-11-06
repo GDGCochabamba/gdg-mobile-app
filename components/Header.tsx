@@ -17,10 +17,11 @@ import { fonts, widthSizes } from '@/styles/Sizes';
 interface Props {
   enableBack?: boolean;
   hideProfile?: boolean;
+  customBackground?: string;
 }
 
-export default function Header({ enableBack = false, hideProfile = false }: Props) {
-  const background = useThemeColor({}, 'background');
+export default function Header({ enableBack = false, hideProfile = false, customBackground }: Props) {
+  const background = customBackground ? customBackground : useThemeColor({}, 'background');
   const gdgColors = useThemeColor({}, 'gdgColors');
   const { user } = useUserSession();
   const { goBack, navigateTo } = useAppNavigation();

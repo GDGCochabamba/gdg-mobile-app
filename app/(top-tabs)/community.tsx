@@ -57,8 +57,16 @@ export default function CommunityScreen() {
   const renderCards = () => {
     return (
       <View style={styles.cardContainer}>
-        <CardSection title={i18n.t('socialMedia')} icon={<ShareSvr />} />
-        <CardSection title={i18n.t('content')} icon={<IntegrationInstructionsSvr />} />
+        <CardSection
+          title={i18n.t('socialMedia')}
+          icon={<ShareSvr />}
+          onPress={() => navigateTo(Routes.Root.socialNetworks)}
+        />
+        <CardSection
+          title={i18n.t('content')}
+          icon={<IntegrationInstructionsSvr />}
+          onPress={() => navigateTo(Routes.Root.appContent)}
+        />
       </View>
     );
   };

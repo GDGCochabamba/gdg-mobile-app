@@ -13,10 +13,17 @@ export const Routes = {
     friendsGDG: 'friendsGDG',
     contest: 'contest',
     ranking: 'ranking',
+    socialNetworks: 'socialNetworks',
+    appContent: 'appContent',
   },
   NotFound: '*',
 };
 
 export const GeneralScreenOptions = {
   headerShown: false,
+};
+
+export const GeneralModalOptions: any = {
+  headerShown: false,
+  presentation: 'modal',
 };

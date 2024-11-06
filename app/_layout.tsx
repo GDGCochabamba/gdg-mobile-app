@@ -11,7 +11,7 @@ import '../i18n';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 
-import { GeneralScreenOptions, Routes } from '@/constants/Routes';
+import { GeneralModalOptions, GeneralScreenOptions, Routes } from '@/constants/Routes';
 import { fullAllScreen } from '@/styles/containerStyles';
 
 SplashScreen.preventAutoHideAsync().then();
@@ -54,6 +54,8 @@ export default function RootLayout() {
               <Stack.Screen name={Routes.Root.friendsGDG} options={GeneralScreenOptions} />
               <Stack.Screen name={Routes.Root.contest} options={GeneralScreenOptions} />
               <Stack.Screen name={Routes.Root.ranking} options={GeneralScreenOptions} />
+              <Stack.Screen name={Routes.Root.socialNetworks} options={GeneralModalOptions} />
+              <Stack.Screen name={Routes.Root.appContent} options={GeneralModalOptions} />
             </Stack>
           </View>
         </View>

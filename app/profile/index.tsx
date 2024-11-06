@@ -26,7 +26,8 @@ export default function ProfileScreen() {
         </View>
       </View>
       <View style={styles.body}>
-        <QRCode value={user.uid} size={widthSizes[200]} />
+        <QRCode value={user.uid} size={widthSizes[100]} />
+        <TextApp text={i18n.t('comingSoon')} style={styles.title} />
       </View>
       <View style={styles.actionContainer}>
         <MainButton text={i18n.t('logout')} onPress={logout} />
@@ -68,5 +69,10 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: fonts[20],
+    marginTop: widthSizes[20],
   },
 });
