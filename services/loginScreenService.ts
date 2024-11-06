@@ -9,12 +9,12 @@ import fbUsers from '@/firebase/firestore/fbUsers';
 import { FbUserCredential } from '@/models/FbUserCredential';
 
 const useLoginScreenService = () => {
-  const { navigateTo } = useAppNavigation();
+  const { replaceTo } = useAppNavigation();
   const [loading, setLoading] = useState(false);
 
   const createDataForNewUser = async (fbUserCredential: FbUserCredential) => {
     await fbUsers.createUserByFbUserCredential(fbUserCredential);
-    navigateTo(Routes.Root.topTabs);
+    replaceTo(Routes.Root.topTabs);
   };
 
   const loginWithGoogle = async () => {
@@ -24,7 +24,7 @@ const useLoginScreenService = () => {
       if (result && result.user && result.user.email) {
         const user = await fbUsers.getUserByEmail(result.user.email);
         if (user) {
-          navigateTo(Routes.Root.topTabs);
+          replaceTo(Routes.Root.topTabs);
         } else {
           await createDataForNewUser(result);
         }

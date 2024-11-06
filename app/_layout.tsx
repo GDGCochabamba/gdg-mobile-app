@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
-import { View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
+import { DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import 'react-native-reanimated';
 import '../firebaseConfig';
@@ -34,7 +34,9 @@ export default function RootLayout() {
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    // <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={DefaultTheme}>
+      <StatusBar barStyle={'dark-content'} />
       <View style={[fullAllScreen.appContainer]}>
         <View style={[fullAllScreen.fullFlex, { marginTop: insets.top, marginBottom: insets.bottom }]}>
           <View style={fullAllScreen.fullFlex}>
@@ -51,6 +53,7 @@ export default function RootLayout() {
               <Stack.Screen name={Routes.Root.agenda} options={GeneralScreenOptions} />
               <Stack.Screen name={Routes.Root.friendsGDG} options={GeneralScreenOptions} />
               <Stack.Screen name={Routes.Root.contest} options={GeneralScreenOptions} />
+              <Stack.Screen name={Routes.Root.ranking} options={GeneralScreenOptions} />
             </Stack>
           </View>
         </View>

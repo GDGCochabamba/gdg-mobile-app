@@ -6,7 +6,8 @@ export function useThemeColor(
   props: { light?: string; dark?: string },
   colorName: keyof typeof Colors.light & keyof typeof Colors.dark,
 ): any {
-  const theme = useColorScheme() ?? 'light';
+  // const theme = useColorScheme() ?? 'light';
+  const theme = 'light';
   const colorFromProps = props[theme];
 
   if (colorFromProps) {

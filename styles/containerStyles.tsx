@@ -4,6 +4,7 @@ export const fullAllScreen = StyleSheet.create({
   appContainer: {
     width: '100%',
     height: '100%',
+    backgroundColor: 'white',
   },
   fullFlex: {
     flex: 1,

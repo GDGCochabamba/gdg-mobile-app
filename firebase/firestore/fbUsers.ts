@@ -33,9 +33,29 @@ const createUserByFbUserCredential = async (fbUserCredential: FbUserCredential) 
   }
 };
 
+const getAllUsers = async () => {
+  let users: any = [];
+  try {
+    const querySnapshot = await firestore().collection('users').get();
+    if (querySnapshot.empty) {
+      return users;
+    }
+
+    querySnapshot.forEach((doc) => {
+      users.push(doc.data());
+    });
+  } catch (error) {
+    console.error('Error getting all users: ', error);
+  }
+
+  console.log('Users', JSON.stringify(users));
+  return users;
+};
+
 const fbUsers = {
   getUserByEmail,
   createUserByFbUserCredential,
+  getAllUsers,
 };
 
 export default fbUsers;

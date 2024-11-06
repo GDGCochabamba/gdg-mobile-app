@@ -12,6 +12,7 @@ export const Routes = {
     agenda: 'agenda',
     friendsGDG: 'friendsGDG',
     contest: 'contest',
+    ranking: 'ranking',
   },
   NotFound: '*',
 };

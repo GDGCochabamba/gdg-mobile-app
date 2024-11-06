@@ -1,30 +1,41 @@
 import React from 'react';
 import { i18n } from '@/i18n';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, FlatList } from 'react-native';
 
 import TextApp from '@/components/texts/TextApp';
 import ShareSvr from '@/components/svg/ShareSvr';
 import CardSection from '@/components/CardSection';
+import UserRanking from '@/components/UserRanking';
 import MainButton from '@/components/buttons/MainButton';
 import IntegrationInstructionsSvr from '@/components/svg/IntegrationInstructionsSvr';
 
-import communityScreenService from '@/services/communityScreenService';
+import communityService from '@/services/communityService';
 
 import { useThemeColor } from '@/hooks/useThemeColor';
+import useAppNavigation from '@/hooks/useAppNavigation';
 
 import { fonts, heightSizes, widthSizes } from '@/styles/Sizes';
+import { Routes } from '@/constants/Routes';
+import { FbUser } from '@/models/FbUser';
 
 export default function CommunityScreen() {
   const gdgColors = useThemeColor({}, 'gdgColors');
   const dateColor = useThemeColor({}, 'date');
   const cardBorder = useThemeColor({}, 'cardBorder');
-  const {} = communityScreenService.useCommunityScreenService();
+  const { navigateTo } = useAppNavigation();
+  const { users } = communityService.useCommunityScreenService();
 
   const renderRanking = () => {
-    const seeAll = () => {};
+    const seeAll = () => {
+      navigateTo(Routes.Root.ranking);
+    };
 
     const renderRankingList = () => {
-      return <View style={styles.rankingListContainer}></View>;
+      return (
+        <View style={styles.rankingListContainer}>
+          <FlatList data={users} renderItem={({ item }: { item: FbUser }) => <UserRanking user={item} />} />
+        </View>
+      );
     };
 
     return (
@@ -35,7 +46,7 @@ export default function CommunityScreen() {
         </View>
         {renderRankingList()}
         <MainButton
-          text={'Ver Todos'}
+          text={i18n.t('seeAll')}
           onPress={seeAll}
           style={[styles.seeAllButton, { backgroundColor: gdgColors.blue }]}
         />

@@ -16,6 +16,7 @@ export interface FbEvent {
   openRegistration: boolean;
   bannerImage: string;
   registrationLink: string;
+  eventMap: string;
 }
 
 export interface DateClass {
