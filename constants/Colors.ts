@@ -21,6 +21,10 @@ export const Colors = {
     date: '#6D757A',
     blue: '#007AFF',
     cardBorder: '#CAC4D0',
+    textColors: {
+      white: '#ffffff',
+      black: '#000000',
+    },
     forms: {
       outputRange: outputRange,
     },
@@ -54,6 +58,10 @@ export const Colors = {
     date: '#6D757A',
     blue: '#007AFF',
     cardBorder: '#CAC4D0',
+    textColors: {
+      white: '#ffffff',
+      black: '#000000',
+    },
     forms: {
       outputRange: outputRange,
     },
