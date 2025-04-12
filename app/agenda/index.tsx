@@ -7,9 +7,10 @@ import TabsTalkContent from '@/components/TabsTalkContent';
 import { useThemeColor } from '@/hooks/useThemeColor';
 
 import agendaService from '@/services/agendaService';
+import Loading from '@/components/Loading';
 
 export default function AgendaScreen() {
-  const { schedules } = agendaService.useAgendaService();
+  const { schedules, loading } = agendaService.useAgendaService();
   const background = useThemeColor({}, 'background');
   const [indexTab, setIndexTab] = useState(0);
 
@@ -31,6 +32,7 @@ export default function AgendaScreen() {
 
   return (
     <View style={styles.container}>
+      {loading && <Loading loading={loading} backgroundColor={'transparent'} />}
       {schedules && schedules.rooms && schedules.rooms.length > 0 && (
         <>
           {renderTabs()}

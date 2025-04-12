@@ -20,11 +20,31 @@ export interface Talk {
   type: TalkType;
   active?: boolean;
   finished?: boolean;
+  speakerCompany?: string;
+  speakerCity?: string;
+  speakerCountry?: string;
+  speakerEmail?: string;
+  socialNetworks?: SocialNetwork[];
+  requirements?: string;
+}
+
+export interface SocialNetwork {
+  name: SocialNetworkType;
+  url: string;
 }
 
 export interface Link {
   url: string;
   name: string;
+}
+
+export enum SocialNetworkType {
+  TWITTER = 'TWITTER',
+  LINKEDIN = 'LINKEDIN',
+  GITHUB = 'GITHUB',
+  YOUTUBE = 'YOUTUBE',
+  FACEBOOK = 'FACEBOOK',
+  INSTAGRAM = 'INSTAGRAM',
 }
 
 export enum TalkType {

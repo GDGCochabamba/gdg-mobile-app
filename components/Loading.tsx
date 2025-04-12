@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, ActivityIndicator } from 'react-native';
+import { View, StyleSheet, ActivityIndicator, DimensionValue } from 'react-native';
 
 import { i18n } from '@/i18n';
 
@@ -10,9 +10,12 @@ import { fonts } from '@/styles/Sizes';
 
 interface Props {
   loading: boolean;
+  width?: DimensionValue;
+  height?: DimensionValue;
+  backgroundColor?: string;
 }
 
-const Loading = ({ loading }: Props) => {
+const Loading = ({ loading, width = '100%', height = '100%', backgroundColor = 'rgba(0, 0, 0, 0.5)' }: Props) => {
   const white = useThemeColor({}, 'white');
 
   if (!loading) {
@@ -20,7 +23,7 @@ const Loading = ({ loading }: Props) => {
   }
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, { width: width, height: height, backgroundColor: backgroundColor }]}>
       <ActivityIndicator size="large" color={white} />
       <TextApp text={i18n.t('loading')} style={[styles.text, { color: white }]} />
     </View>
@@ -29,10 +32,7 @@ const Loading = ({ loading }: Props) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: '100%',
     zIndex: 1000,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',

@@ -48,7 +48,6 @@ const getAllUsers = async () => {
     console.error('Error getting all users: ', error);
   }
 
-  console.log('Users', JSON.stringify(users));
   return users;
 };
 
